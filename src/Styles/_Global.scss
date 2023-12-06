@@ -1,0 +1,157 @@
+@use "./Mixins" as *;
+@use "./Variables" as *;
+
+* {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  scrollbar-width: thin;
+  scrollbar-color: $thumbColor $trackColor;
+}
+img {
+  user-select: none;
+}
+// Layout
+body {
+  background-color: $bgDark;
+  transition: $transitionDuration;
+}
+// body focus effect
+.is-focused {
+  overflow: hidden;
+}
+
+.container {
+  padding-inline: 20px;
+}
+
+.blocker {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.658);
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  visibility: visible;
+  opacity: 1;
+  transition: $transitionDuration;
+  overflow-y: scroll;
+}
+.blocker-hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.services,
+.carousel,
+.top-products,
+.all-products,
+.product-summary,
+.product-tabs,
+.related-products,
+.cart,
+.error-page {
+  padding-block: 80px;
+}
+// Text Colors
+.text-main {
+  color: $textColor;
+}
+.text-muted {
+  color: $textMuted;
+}
+.text-green {
+  color: $textGreen;
+}
+li {
+  list-style-position: inside;
+}
+::selection {
+  background-color: $bgPrimary;
+  color: $btnTextColor;
+}
+// Headings
+// slider heading
+h1 {
+  font-size: $sliderHeading;
+  font-weight: 500;
+}
+// Main Headings
+h2 {
+  font-size: $mainHeadings;
+  font-weight: 400;
+  margin-bottom: 80px;
+}
+// Logo
+.logo {
+  font-size: $logo;
+  font-weight: 400;
+}
+// Final Price
+h3 {
+  font-size: $cardFinalPrice;
+  font-weight: 500;
+}
+// Footer Headings
+h4 {
+  font-size: $footerHeadings;
+  font-weight: 500;
+}
+// Card Title
+h5 {
+  font-size: $cardTitle;
+  font-weight: 500;
+  line-height: 30px;
+}
+// Summary Price
+h6 {
+  font-size: $summaryPrice;
+  font-weight: 500;
+}
+
+// Text
+// Price
+del {
+  font-size: $productPrice;
+  font-weight: 500;
+}
+// Text Large
+.text-large {
+  font-size: $fontLarge;
+}
+.text-small {
+  font-size: $fontSmall;
+}
+.link-hover {
+  transition: $transitionDuration;
+  &:hover {
+    color: $textColor;
+  }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $trackColor;
+}
+::-webkit-scrollbar-thumb {
+  background: $thumbColor;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+*::-moz-scrollbar-thumb {
+  background-color: $thumbColor;
+}
+
+*::-moz-scrollbar-track {
+  background-color: $trackColor;
+}
+
+*::-moz-scrollbar-thumb:hover {
+  background-color: #555;
+}

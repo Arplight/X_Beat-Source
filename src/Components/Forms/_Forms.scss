@@ -1,0 +1,71 @@
+@use "../../Styles/Variables" as *;
+
+.main-form {
+  transition: $transitionDuration;
+  opacity: 0;
+  visibility: hidden;
+  background-color: $bgDark;
+  height: max-content;
+  margin-block: auto;
+  position: relative;
+  input {
+    background-color: $bgDark;
+  }
+  .social-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    p {
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $textColor;
+        width: 25%;
+        height: 1px;
+        top: calc(50% + 1px);
+      }
+      &::after {
+        right: 0px;
+      }
+      &::before {
+        left: 0px;
+      }
+    }
+  }
+}
+
+.form-label,
+.subscribe-Label {
+  position: absolute;
+  transform: translateY(10px) translateX(10px) scale(1.05);
+  color: $textColor;
+  padding-inline: 3px;
+  font-size: $fontSmall;
+  width: max-content;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.form-label {
+  background-color: $bgDark;
+}
+.subscribe-Label {
+  background-color: $bgBlack;
+}
+// Focus Effects
+.label-focus {
+  transform: translateY(-11px) translateX(2px) scale(0.9) !important;
+  color: $textMuted !important;
+}
+.show-form {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.error {
+  color: rgba(255, 0, 0, 0.596);
+  position: absolute;
+  font-size: clamp(10px, 2vw, 13px);
+  bottom: -22px;
+  left: 0px;
+}

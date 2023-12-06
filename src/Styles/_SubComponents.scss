@@ -1,0 +1,159 @@
+@use "./Variables" as *;
+@use "./Mixins" as *;
+// Icons
+.large-icon {
+  font-size: $largeIcon;
+}
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+// Buttons
+button {
+  outline: none;
+  transition: $transitionDuration;
+}
+.single-button {
+  @include buttons("single", false, null);
+}
+.full-button {
+  @include buttons("single", true, null);
+}
+.tab-button {
+  @include buttons("tab", false, null);
+}
+.social-button-facebook {
+  @include buttons("social", false, "facebook");
+}
+.social-button-google {
+  @include buttons("social", false, "google");
+}
+.social-button-twitter {
+  @include buttons("social", false, "twitter");
+}
+.form-button {
+  @include buttons("form", false, null);
+}
+.top-button {
+  @include buttons("top", false, null);
+}
+.quantity-button {
+  @include buttons("quantity", false, null);
+}
+.close-button {
+  @include buttons("close", false, null);
+}
+.remove-button {
+  @include buttons("remove", false, null);
+}
+
+// Badges
+.in-stock {
+  background-color: $bgSuccess;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  border-radius: $borderRadius;
+  padding-block: 5px;
+  padding-inline: 10px;
+  span {
+    color: aliceblue;
+    font-weight: 400;
+  }
+}
+.cart-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $bgPrimary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  p {
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+.offer-badge {
+  padding: 8px;
+  border: $templateBorder;
+  border-radius: $borderRadius;
+  width: max-content;
+  background-color: $bgProduct;
+}
+// rating
+.rating {
+  display: flex;
+  gap: 3px;
+
+  .star {
+    fill: $bgsecondary;
+    font-size: 13px;
+  }
+}
+
+// Inputs
+fieldset {
+  position: relative;
+}
+.form-input {
+  background-color: rgba(240, 248, 255, 0);
+  color: $textColor;
+  padding-inline: 10px;
+  padding-block: 8px;
+  outline: none;
+  width: 100%;
+  border-radius: $borderRadius;
+  border: $templateBorder;
+  transition: $transitionDuration;
+  &:focus {
+    border: 1px solid aliceblue;
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-text-fill-color: $textColor;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+input:-moz-autofill {
+  -moz-text-fill-color: $textColor;
+}
+// Active Tabs
+.tab-active {
+  background-color: rgb(255, 0, 0);
+  color: aliceblue;
+}
+// Images
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.avatar {
+  background-color: rgba(240, 248, 255, 0.055);
+  font-size: 45px;
+  color: rgba(255, 255, 255, 0.349);
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0);
+}
+// Tables
+td {
+  padding: 8px;
+  border: 1px solid rgba(240, 248, 255, 0.11);
+  text-align: left;
+  font-style: italic;
+}
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.021);
+}

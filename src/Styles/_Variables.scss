@@ -1,0 +1,45 @@
+// Template Colors
+$bgBlack: #000;
+$bgDark: #141414;
+$bgProduct: #161819;
+$bgQuantity: #222;
+$bgSuccess: #008000;
+$bgButton: rgba(255, 0, 0, 0.8);
+$bgPrimary: #ff0000;
+$bgsecondary: #ed1d24;
+$thumbColor: #454a4d;
+$trackColor: #202324;
+$thumbHover: #596268;
+$textColor: #a9afc3;
+$textMuted: #6c757d;
+$textGreen: #008000;
+$btnTextColor: #fff;
+$fbColor: #3b5998;
+$twitterColor: #00aced;
+$googleColor: #a61c00;
+
+// Template Font Size
+$fontSmall: 15px;
+$fontLarge: 17px;
+$summaryPrice: 18px;
+$btnFont: clamp(14px, 2vw, 18px);
+$cardTitle: clamp(1.2em, 5vw, 1.4em);
+$cardPrice: 24px;
+$productPrice: clamp(18px, 2vw, 20px);
+$cardFinalPrice: clamp(1.6em, 2vw, 1.8em);
+$sliderHeading: clamp(1.5rem, 5vw, 3rem);
+$sliderModel: 1.3rem;
+$mainHeadings: 1.6rem;
+$logo: clamp(1.3rem, 5vw, 1.6rem);
+$servicesIconSize: 2.2rem;
+$buttonSize: 8px;
+$footerHeadings: 18px;
+$largeIcon: 180px;
+// Border
+$templateBorder: 1px solid hsla(0, 0%, 100%, 0.4);
+$borderRadius: 3px;
+
+// transition duration
+$transitionDuration: 0.3s linear;
+// Box Shadow
+$boxShadow: 0 5px 10px rgba(0, 0, 0, 0.5);

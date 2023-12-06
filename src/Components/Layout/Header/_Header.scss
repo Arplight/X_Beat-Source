@@ -1,0 +1,27 @@
+@use "../../../Styles/Variables" as *;
+
+header {
+  transition: $transitionDuration;
+  position: relative;
+}
+.header-glassy {
+  background-color: rgba(0, 0, 0, 0);
+}
+.header-black {
+  background-color: black;
+}
+.header-dropdown {
+  right: 10px;
+  top: 66px;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transitionDuration;
+  box-shadow: $boxShadow;
+  border: $templateBorder;
+}
+.menu:hover {
+  .header-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+}

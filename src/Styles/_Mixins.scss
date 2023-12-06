@@ -1,0 +1,178 @@
+@use "./Variables" as *;
+
+@mixin buttons($type, $isFull, $social) {
+  @if ($type == "single") {
+    background-color: $bgButton;
+    padding-block: $buttonSize;
+    padding-inline: 2.5 * $buttonSize;
+    color: $btnTextColor;
+    font-size: $btnFont;
+    border-radius: $borderRadius;
+    transition: $transitionDuration;
+    &:hover {
+      background-color: rgb(255, 0, 0);
+    }
+  } @else if($type == "tab") {
+    background-color: rgba(255, 0, 0, 0);
+    padding-block: $buttonSize;
+    padding-inline: 2 * $buttonSize;
+    color: $textColor;
+    font-size: $btnFont;
+    border-radius: $borderRadius;
+    &:not(.tab-active):hover {
+      background-color: rgba(255, 0, 0, 0.308);
+      color: $btnTextColor;
+    }
+  } @else if($type == "top") {
+    opacity: 0;
+    visibility: hidden;
+    background-color: $bgPrimary;
+    padding: 5px;
+    color: $btnTextColor;
+    font-size: 30px;
+    border-radius: $borderRadius;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+  } @else if($type == "social") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(85px, 20vw, 110px);
+    height: clamp(35px, 5vw, 40px);
+    color: $btnTextColor;
+    font-size: $btnFont;
+  } @else if($type == "form") {
+    background-color: rgba(0, 0, 0, 0);
+    padding-block: $buttonSize;
+    padding-inline: 2 * $buttonSize;
+    color: $textColor;
+    font-size: $fontSmall;
+    border: $templateBorder;
+    width: max-content;
+    &:hover {
+      border: 1px solid $btnTextColor;
+      color: $btnTextColor;
+    }
+  } @else if($type == "quantity") {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(240, 248, 255, 0.158);
+    border-radius: $borderRadius;
+    width: clamp(93px, 20vw, 140px);
+    height: clamp(23px, 6vw, 35px);
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $textColor;
+      width: 30%;
+      height: 100%;
+      font-size: clamp(12px, 2vw, 16px);
+      font-weight: 500;
+      background-color: $bgQuantity;
+      &:hover {
+        color: $btnTextColor;
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $bgPrimary;
+      font-size: clamp(14px, 3vw, 22px);
+      font-weight: 500;
+      width: 40%;
+      height: 100%;
+    }
+  } @else if($type == "close") {
+    background-color: $bgBlack;
+    padding: 3px;
+    width: max-content;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    .close {
+      fill: $textColor;
+      font-size: 20px;
+      &:hover {
+        fill: $btnTextColor;
+      }
+    }
+  } @else if($type == "remove") {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: $textColor;
+    font-size: 18px;
+    &:hover {
+      color: $bgPrimary;
+    }
+  }
+  @if ($isFull) {
+    width: 100%;
+  }
+  @if ($social == "facebook") {
+    background-color: $fbColor;
+  } @else if($social == "google") {
+    background-color: $googleColor;
+  } @else if ($social == "twitter") {
+    background-color: $twitterColor;
+  }
+}
+
+@mixin card($isEmpty) {
+  height: 480px;
+  display: flex;
+  border: $templateBorder;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  @if ($isEmpty) {
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    a {
+      font-size: 1.6rem;
+      line-height: 30px;
+      transition: $transitionDuration;
+      &:hover {
+        color: $btnTextColor;
+      }
+    }
+  } @else {
+    flex-direction: column;
+    .card-image {
+      height: 60%;
+      width: 100%;
+      background-color: $bgProduct;
+      padding: 16px;
+      overflow: hidden;
+      img {
+        transition: $transitionDuration;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+    .card-info {
+      background-color: $bgDark;
+      width: 100%;
+      height: max-content;
+      section {
+        display: flex;
+        flex-direction: column;
+        padding-block: 10px;
+        &:first-child {
+          gap: 3px;
+          border-bottom: $templateBorder;
+        }
+        &:nth-child(2) {
+          gap: 15px;
+        }
+      }
+      height: auto;
+      padding: 16px;
+    }
+  }
+}
