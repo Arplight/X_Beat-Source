@@ -11,11 +11,6 @@ X-Beat is a project built with React, using essential dependencies like Formik, 
 
 - [🚀 Run Locally](#run-locally)
 
-- [🙌 Contributors](#contributors)
-
-- [☁️ Deploy](#deploy)
-
-- [📄 License](#license)
 
 ## 📝 Project Summary
 - [**src/Components**](src/Components): Core components for building UI elements.
