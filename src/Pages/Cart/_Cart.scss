@@ -1,0 +1,15 @@
+@use "../../Styles/Mixins" as *;
+@use "../../Styles/Variables" as *;
+.cart-list {
+  .item-description {
+    font-size: clamp(14px, 3vw, 17px);
+  }
+  .prices {
+    h3 {
+      font-size: clamp(1em, 4vw, 1.8em);
+    }
+    del {
+      font-size: clamp(14px, 3vw, 20px);
+    }
+  }
+}

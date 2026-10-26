@@ -1,0 +1,90 @@
+@use "../../../../Styles/Variables" as *;
+
+.board-large {
+  height: calc(100vh - 58px);
+  position: sticky;
+  top: 58px;
+  overflow-y: scroll;
+}
+.board-small {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 10;
+  box-shadow: 0px -10px 10px 5px rgba(0, 0, 0, 0.178);
+  transition: 0.8s ease;
+  border-top-right-radius: 10px;
+  .container {
+    padding: 0px;
+  }
+  button {
+    font-size: clamp(12px, 3vw, 14px);
+    padding-inline: 10px;
+  }
+  .board-icon {
+    font-size: clamp(20px, 3vw, 22px);
+  }
+  .board-label {
+    font-size: clamp(16px, 3vw, 18px);
+  }
+  .board-open-close {
+    padding-inline: 8px;
+    font-size: 20px;
+    position: relative;
+    &::before {
+      content: "";
+      background: rgba(240, 248, 255, 0.199);
+      height: 58px;
+      width: 1px;
+      top: -18px;
+      bottom: 0px;
+      left: 0px;
+      position: absolute;
+    }
+  }
+
+  #sort {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      background: rgba(240, 248, 255, 0.425);
+      width: 1px;
+      height: 15px;
+      right: 0px;
+    }
+  }
+}
+.sort-board,
+.filter-board {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.692);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  inset: auto 0 55px 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  transition: 0.8s ease;
+  z-index: 10;
+  padding: 30px;
+}
+.menu-collapsed {
+  transform: translateY(125%);
+}
+.board-closed {
+  transform: translateX(calc(-100% + 37px));
+}
+.sort-item {
+  transition: $transitionDuration;
+  cursor: pointer;
+  &:hover {
+    color: $bgPrimary;
+  }
+}
+.sort-active {
+  color: $bgPrimary !important;
+}
+input[type="range"],
+input[type="checkbox"] {
+  accent-color: $bgPrimary;
+  cursor: pointer;
+}

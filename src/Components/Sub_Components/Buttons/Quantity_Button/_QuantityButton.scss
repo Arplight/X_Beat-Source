@@ -1,0 +1,6 @@
+@use "../../../../Styles/Variables" as *;
+.quantity-disabled {
+  background-color: #2222229d !important;
+  cursor: not-allowed !important;
+  color: #a9afc3b7 !important;
+}

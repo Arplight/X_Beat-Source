@@ -1,0 +1,51 @@
+@use "../../../Styles/Variables" as *;
+.search-bar {
+  position: fixed;
+  top: 57px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 10px;
+  input {
+    transform: translateY(-42px);
+    z-index: 20;
+    background-color: $bgProduct;
+    width: 70%;
+  }
+  .search-list {
+    width: 70%;
+    height: max-content;
+    padding: 10px;
+    z-index: 20;
+    background-color: $bgProduct;
+    border: $templateBorder;
+    transition: $transitionDuration;
+    opacity: 1;
+    visibility: visible;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      li {
+        transition: 0.2s ease;
+        color: $textColor;
+        &:hover {
+          color: $bgPrimary;
+        }
+      }
+      a {
+        display: block;
+      }
+    }
+  }
+}
+.show-search {
+  transform: translateY(0px) !important;
+}
+.hide-search-list {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}

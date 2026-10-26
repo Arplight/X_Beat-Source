@@ -1,0 +1,9 @@
+@use "../../../../Styles/Mixins" as *;
+@use "../../../../Styles/Variables" as *;
+// Cards
+.product-card {
+  @include card(false);
+}
+.empty-card {
+  @include card(true);
+}
