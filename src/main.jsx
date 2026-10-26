@@ -10,7 +10,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ProductsProvider from "./Components/Contexts/ProductsProvider.jsx";
 import CartProvider from "./Components/Contexts/CartProvider.jsx";
 import FocusProvider from "./Components/Contexts/FocusProvider.jsx";
-import UserProvider from "./Components/Contexts/userProvider.jsx";
+import UserProvider from "./Components/Contexts/UserProvider.jsx";
 // serviceWorker registering
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {

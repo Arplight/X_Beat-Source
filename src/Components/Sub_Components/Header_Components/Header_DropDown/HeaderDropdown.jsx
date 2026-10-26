@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { dropdownMenu } from "../../../../data/headerData";
 // Contexts
 import { FocusContext } from "../../../Contexts/FocusProvider";
-import { userContext } from "../../../Contexts/userProvider";
+import { userContext } from "../../../Contexts/UserProvider";
 // Reat Router
 import { Link } from "react-router-dom";
 export default function HeaderDropdown() {

@@ -4,7 +4,7 @@ import FormField from "../../Form_Field/FormField";
 import { signUpSchema } from "../../Validation_Schema/ValidationSchema";
 import { Formik, Form } from "formik";
 // Contexts
-import { userContext } from "../../../Contexts/userProvider";
+import { userContext } from "../../../Contexts/UserProvider";
 import PropTypes from "prop-types";
 
 export default function SignUp({ formSetter }) {
