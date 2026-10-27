@@ -1,3 +1,4 @@
+import process from "node:process";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
@@ -36,5 +37,6 @@ export default defineConfig({
     build: "vite build",
     preview: "vite preview",
   },
-  base: "/X-Beat/",
+  // Cloudflare Pages/Workers serve from `/`; GitHub Pages used `/X-Beat/`.
+  base: process.env.CF_PAGES || process.env.WORKERS_CI ? "/" : "/X-Beat/",
 });
