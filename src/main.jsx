@@ -11,27 +11,11 @@ import ProductsProvider from "./Components/Contexts/ProductsProvider.jsx";
 import CartProvider from "./Components/Contexts/CartProvider.jsx";
 import FocusProvider from "./Components/Contexts/FocusProvider.jsx";
 import UserProvider from "./Components/Contexts/UserProvider.jsx";
-// serviceWorker registering
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then((registration) => {
-        console.log(
-          "Service Worker registered with scope:",
-          registration.scope
-        );
-      })
-      .catch((error) => {
-        console.error("Service Worker registration failed:", error);
-      });
-  });
-}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
-      <BrowserRouter basename="/X-Beat/">
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <UserProvider>
           <ProductsProvider>
             <CartProvider>

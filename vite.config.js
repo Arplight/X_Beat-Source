@@ -1,9 +1,9 @@
-import process from "node:process";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/",
   server: {
     port: 5999,
   },
@@ -33,10 +33,4 @@ export default defineConfig({
       },
     }),
   ],
-  scripts: {
-    build: "vite build",
-    preview: "vite preview",
-  },
-  // Cloudflare Pages/Workers serve from `/`; GitHub Pages used `/X-Beat/`.
-  base: process.env.CF_PAGES || process.env.WORKERS_CI ? "/" : "/X-Beat/",
 });
